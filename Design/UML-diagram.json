@@ -1,9 +1,3 @@
----
-config:
-  layout: elk
-  class:
-    hideEmptyMembersBox: false
----
 classDiagram
 direction TB
 	namespace Users {
@@ -110,10 +104,10 @@ direction TB
 	        +run() Void
         }
         class IReadable {
-	        +play() Void
+	        +read() Void
         }
         class IBorrowable {
-	        +play() Void
+	        +borrow() Void
         }
         class IDownloadable {
 	        +download() Void

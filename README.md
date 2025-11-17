@@ -1,1 +1,3 @@
-# oop-workshop
+Jeppe Poulsen
+
+Library workshop

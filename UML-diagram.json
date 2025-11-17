@@ -1,0 +1,145 @@
+---
+config:
+  layout: elk
+  class:
+    hideEmptyMembersBox: false
+---
+classDiagram
+direction TB
+	namespace Users {
+        class Admin {
+	        +createUser() String
+	        +deleteUser() Void
+	        +updateUser() String
+	        +viewUser() Void
+        }
+        class Employee {
+	        +add(MediaItem) String
+	        +remove(MediaItem) Void
+        }
+        class Borrower {
+	        +borrow(MediaItem) String
+	        +rate(MediaItem) Int
+	        +listItems() Void
+	        +preview(MediaItem) Void
+        }
+        class User {
+	        -String Name
+	        -Int Age
+	        -String Social Security Number
+	        +verifyRole() String
+        }
+	}
+    class MediaItem {
+	    -Type Attribute
+	    +Preview() Void
+	    +Download() Void
+    }
+    class `E-book` {
+	    -String Title
+	    -String Author
+	    -String Language
+	    -Int Number of pages
+	    -Int Year of publication
+	    -String ISBN
+	    +read() Void
+    }
+    class Movie {
+	    -String Title
+	    -String Director
+	    -String Genres
+	    -Int Release Year
+	    -String Language
+	    -double DurationMinutes
+	    +play() Void
+    }
+    class Song {
+	    -String Title
+	    -String Composer
+	    -String Singer
+	    -String Genre
+	    -String File type
+	    -Double DurationMinutes
+	    -String Language
+	    +play() Void
+    }
+    class `Video-game` {
+	    -String Title
+	    -String Genre
+	    -String Publisher
+	    -Int Release year
+	    -String Supported platforms
+	    +play() Void
+    }
+    class App {
+	    -String Title
+	    -String Version
+	    -String Publisher
+	    -String Supported platforms
+	    -Double File size
+	    +run() Void
+    }
+    class Podcast {
+	    -String Title
+	    -Int Release year
+	    -Int Episode number
+	    -String Language
+	    -String Host(s)
+	    -String Guest(s)
+	    +play() Void
+    }
+    class Image {
+	    -String Title
+	    -String Resolution
+	    -String File format
+	    -Double File size
+	    -String Date taken
+	    +display() Void
+    }
+    namespace Interface{
+        class IPlayable {
+	        +play() Void
+        }
+        class IRateable {
+	        +rate() Int
+        }
+        class IDisplayable {
+	        +display() Void
+        }
+        class IRunable {
+	        +run() Void
+        }
+        class IReadable {
+	        +play() Void
+        }
+        class IBorrowable {
+	        +play() Void
+        }
+        class IDownloadable {
+	        +download() Void
+        }
+        class IPreviewable {
+	        +preview() Void
+        }
+    }
+    MediaItem <|-- `E-book`
+    MediaItem <|-- Movie
+    MediaItem <|-- Song
+    MediaItem <|-- `Video-game`
+    MediaItem <|-- App
+    MediaItem <|-- Podcast
+    MediaItem <|-- Image
+    User <|-- Employee
+    User <|-- Borrower
+    Employee <|-- Admin
+    IPlayable <|-- Movie
+    IPlayable <|-- Song
+    IPlayable <|-- `Video-game`
+    IPlayable <|-- Podcast
+    IRateable <|-- MediaItem
+    IDisplayable <|-- Image
+    IRunable <|-- App
+    IReadable <|-- `E-book`
+    IBorrowable <|-- MediaItem
+    IDownloadable <|-- MediaItem
+    IPreviewable <|-- MediaItem

@@ -126,14 +126,14 @@ direction TB
     User <|-- Employee
     User <|-- Borrower
     Employee <|-- Admin
-    IPlayable <|-- Movie
-    IPlayable <|-- Song
-    IPlayable <|-- `Video-game`
-    IPlayable <|-- Podcast
-    IRateable <|-- MediaItem
-    IDisplayable <|-- Image
-    IRunable <|-- App
-    IReadable <|-- `E-book`
-    IBorrowable <|-- MediaItem
-    IDownloadable <|-- MediaItem
-    IPreviewable <|-- MediaItem
+    IPlayable <.. Movie
+    IPlayable <.. Song
+    IPlayable <.. `Video-game`
+    IPlayable <.. Podcast
+    IRateable <.. MediaItem
+    IDisplayable <.. Image
+    IRunable <.. App
+    IReadable <.. `E-book`
+    IBorrowable <.. MediaItem
+    IDownloadable <.. MediaItem
+    IPreviewable <.. MediaItem
